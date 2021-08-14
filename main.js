@@ -1,5 +1,5 @@
 const resultEl = document.getElementById('result');
-const lengthEl = document.getElementById('length');
+const lengthEl = document.getElementById('myRange');
 const uppercaseEl = document.getElementById('uppercase');
 const lowercaseEl = document.getElementById('lowercase');
 const numbersEl = document.getElementById('numbers');
@@ -76,4 +76,13 @@ function getRandomNumber() {
 function getRandomSymbol() {
 	const symbols = '!@#$%^&*(){}[]=<>/,.'
 	return symbols[Math.floor(Math.random() * symbols.length)];
+}
+
+var slider = document.getElementById("myRange");
+var output = document.getElementById("selectedValue");
+output.innerHTML = slider.value; // Display the default slider value
+
+// Update the current slider value (each time you drag the slider handle)
+slider.oninput = function() {
+  output.innerHTML = this.value;
 }
