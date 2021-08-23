@@ -7,6 +7,8 @@ const symbolsEl = document.getElementById('symbols');
 const generateEl = document.getElementById('generate');
 const clipboard = document.getElementById('clipboard');
 
+
+
 const randomFunc = {
 	lower: getRandomLower,
 	upper: getRandomUpper,
@@ -25,7 +27,14 @@ clipboard.addEventListener('click', () => {
 	textarea.select();
 	document.execCommand('copy');
 	textarea.remove();
-	alert('Password copied to clipboard');
+	Swal.fire({
+		title: 'Success!',
+		text: 'Password was copied to the clipboard!',
+		icon: 'success',
+		confirmButtonText: 'Oki Pog!',
+		background: "#0D012D"
+	  })
+	// alert('Password copied to clipboard');
 });
 
 generate.addEventListener('click', () => {
